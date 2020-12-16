@@ -1,0 +1,48 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 100vm;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    position: relative;
+    font-size: 100px;
+    color: #544E58;
+}
+h1::before{
+    position: absolute;
+    content: '\5b9e\8df5\0043\0053\0053\7b2c\4e00\5929';
+    /* 透明颜色显示背景色 */
+    color: transparent;
+    background-image: linear-gradient(to right,#bed742,#f8aba6,#585eaa,#ed1941,#7fb80e,#f26522,#ffc20e,#7c8577,#009ad6,#65c294,#f47920,#f15b6c,#2e3a1f);
+    background-clip: text;
+    /* 谷歌兼容 */
+    -webkit-background-clip: text;
+
+    /* 制作一个斜矩阵遮罩 */
+    /* 使用polygon方法 */
+    /* 矩阵需要定义四个角的坐标，顺时针方向定义 从左上到左下*/
+    clip-path: polygon(-20% 0%,0% 0%,-10% 100%,-30% 100%);
+
+    /* 增加动画 */
+    /* animation：动画名称 持续时间 延迟时间 循环次数 */
+    animation: light 2s 0s infinite;
+}
+/* 初始和结束保持一致，中间为最右侧 */
+@keyframes light{
+    0%{
+        clip-path: polygon(-20% 0%,0% 0%,-10% 100%,-30% 100%);
+    }
+    50%{
+        clip-path: polygon(100% 0%,120% 0%,110% 100%,90% 100%);
+    }
+    100%{
+        clip-path: polygon(-20% 0%,0% 0%,-10% 100%,-30% 100%);
+    }
+}
