@@ -1,0 +1,50 @@
+#{
+    padding: 0;
+    margin: 0;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+    display: flex;
+    /* 子元素水平居中 */
+    justify-content: center;
+    /* 子元素垂直居中 */
+    align-items: center;
+}
+
+a{
+    position: relative;
+    padding: 12px 30px;
+    margin: 30px;
+    background-color: #4d385b;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #130f36;
+    border-radius: 12px;
+    /* 超出按钮边界隐藏 */
+    overflow: hidden;
+}
+
+a:nth-child(1):hover{
+    background-color: #ff6659;
+}
+a:nth-child(2):hover{
+    background-color: #762376;
+}
+
+a::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: -50%;
+    width: 50%;
+    height: 100%;
+    /* 用两组transparent让中间的白光更细 */
+    background-image: linear-gradient(60deg,transparent,transparent,#fff,transparent,transparent);
+    /* left属性的过度动画 时长0.5s 从-50%到100% */
+    transition: left 0.5s;
+}
+a:hover::before{
+    left: 100%;
+}
