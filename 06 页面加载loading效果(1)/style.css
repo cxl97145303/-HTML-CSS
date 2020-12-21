@@ -1,0 +1,178 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2d3436;
+}
+.loader1{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    position: relative;
+    background-color: red;
+    box-shadow: -24px 0 #fff,24px 0 #fff;
+    animation: rotation 1.5s ease-in-out infinite;
+}
+
+
+
+.loader2{
+    width: 48px;
+    height: 48px;
+    position: relative;
+    animation: rotation 1.5s ease-in-out infinite;
+}
+.loader2::after, .loader2::before{
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    transform: translate(0,-50%);
+    border-radius: 50%;
+}
+.loader2::after{
+    left: 0;
+    background-color: #df4141;
+}
+.loader2::before{
+    right: 0;
+    background-color: #6fa110;
+}
+
+
+
+.loader3{
+    width: 48px;
+    height: 48px;
+    position: relative;
+    animation: rotation2 1.5s linear infinite;
+}
+.loader3::after, .loader3::before{
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    background-color: seashell;
+    border-radius: 50%;
+    transform: translate(0,-50%);
+}
+.loader3::before{
+    left: 0;
+    background-color: #df4141;
+}
+.loader3::after{
+    right: 0;
+    background-color: #6fa110;
+}
+
+
+
+
+.loader4{
+    width: 48px;
+    height: 48px;
+    position: relative;
+    animation: rotation1 1.5s linear infinite;
+}
+.loader4::after, .loader4::before{
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: brown;
+    border-radius: 50%;
+    transform: translate(0,-50%);
+}
+.loader4::before{
+    top: 0;
+    background-color:#6fa110;
+    animation: scale 1.5s infinite linear alternate;
+}
+.loader4::after{
+    bottom: 0;
+    background-color: #df4141;
+    animation: scale 1.5s infinite linear alternate;
+}
+
+
+
+.loader5{
+    width: 48px;
+    height: 48px;
+    position: relative;
+    animation: rotation 1.5s linear infinite;
+}
+.loader5::after, .loader5::before{
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: chartreuse;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    animation: animaloader 1s ease-in-out infinite;
+}
+.loader5::before{
+    background-color:#fff;
+    transform: scale(0.5) translate(0,0);
+}
+.loader5::after{
+    background-color: #ff3d00;
+    transform: scale(0.5) translate(-200%,-200%);
+}
+
+@keyframes rotation{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(720deg);
+    }
+}
+@keyframes rotation1{
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(720deg);
+    }
+}
+@keyframes rotation2{
+    0%{
+        transform: scale(1) rotate(0deg);
+    }
+    50%{
+        transform: scale(0) rotate(360deg);
+    }
+    100%{
+        transform: scale(1) rotate(720deg);
+    }
+}
+@keyframes scale{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes animaloader{
+    50%{
+        transform: scale(1) translate(-50%,-50%);
+    }
+}
