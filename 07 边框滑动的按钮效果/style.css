@@ -1,0 +1,55 @@
+/* 设置全局的自定义变量 */
+:root{
+    --background-color: #ad4562;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    /* 引用自定义变量的值 */
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a.bt{
+    position: relative;
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    /* 将字体全部改成大写 */
+    text-transform: uppercase;
+    /* 边框未设置颜色会引用color的值填充颜色 */
+    border: 4px solid;
+    padding: 12px 24px;
+}
+
+a.bt::before, a.bt::after{
+    content: "";
+    position: absolute;
+    /* 引用自定义变量的值 */
+    background-color: var(--background-color);
+    width: 12px;
+    height: 4px;
+    /* 将图形沿X轴倾斜 */
+    transform: skew(-30deg);
+    transition: 0.2s linear;
+}
+a.bt::before{
+    top: -4px;
+    left: 20%;
+}
+a.bt::after{
+    bottom: -4px;
+    right: 20%;
+}
+a.bt:hover::before{
+    left: 80%;
+}
+a.bt:hover::after{
+    right: 80%;
+}
