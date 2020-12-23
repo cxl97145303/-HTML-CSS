@@ -1,0 +1,147 @@
+:root {
+    --background-color: #204757;
+    --line-color: #3d5a53;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 让子元素垂直排列 */
+    flex-direction: column;
+}
+.item {
+    position: relative;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item .line{
+    width: 120px;
+    height: 3px;
+    background-color: var(--line-color);
+    animation: line_change 1s linear infinite;
+}
+@keyframes line_change{
+    0%,100%{
+        width: 100%;
+    }
+    50%{
+        width: 0%;
+    }
+}
+.line::before, .line::after{
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: 5px;
+}
+.line::before {
+    left: -15px;
+    background-color: salmon;
+    animation: circle_move1 2s linear infinite;
+}
+.line::after {
+    right: -15px;
+    background-color: seagreen;
+    animation: circle_move2 2s linear infinite;
+}
+@keyframes circle_move1{
+    0%{
+        left: -15px;
+        width: 30px;
+        height: 30px;
+    }
+    25%{
+        /* 转到后面，视觉上看球体变小，被前面的球体覆盖 */
+        width: 25px;
+        height: 25px;
+        z-index: 10;
+    }
+    50%{
+        left: 105px;
+        width: 30px;
+        height: 30px;
+    }
+    75%{
+        /* 转到前面，视觉上看球体变大，把后面的球体覆盖 */
+        width: 35px;
+        height: 35px;
+        z-index: 20;
+    }
+    100%{
+        left: -15px;
+        width: 30px;
+        height: 30px;
+    }
+}
+@keyframes circle_move2{
+    0%{
+        right: -15px;
+        width: 30px;
+        height: 30px;
+    }
+    25%{
+        /* 转到前面，视觉上看球体变大，把后面的球体覆盖 */
+        width: 35px;
+        height: 35px;
+        z-index: 20;
+    }
+    50%{
+        right: 105px;
+        width: 30px;
+        height: 30px;
+    }
+    75%{
+        /* 转到后面，视觉上看球体变小，被前面的球体覆盖 */
+        width: 25px;
+        height: 25px;
+        z-index: 10;
+    }
+    100%{
+        right: -15px;
+        width: 30px;
+        height: 30px;
+    }
+}
+/* 让每个元素的动画分别延时 */
+.item:nth-child(1) .line, .item:nth-child(1) .line::before, .item:nth-child(1) .line::after{
+    animation-delay: 0.1s;
+}
+.item:nth-child(2) .line, .item:nth-child(2) .line::before, .item:nth-child(2) .line::after{
+    animation-delay: 0.2s;
+}
+.item:nth-child(3) .line, .item:nth-child(3) .line::before, .item:nth-child(3) .line::after{
+    animation-delay: 0.3s;
+}
+.item:nth-child(4) .line, .item:nth-child(4) .line::before, .item:nth-child(4) .line::after{
+    animation-delay: 0.4s;
+}
+.item:nth-child(5) .line, .item:nth-child(5) .line::before, .item:nth-child(5) .line::after{
+    animation-delay: 0.5s;
+}
+.item:nth-child(6) .line, .item:nth-child(6) .line::before, .item:nth-child(6) .line::after{
+    animation-delay: 0.6s;
+}
+.item:nth-child(7) .line, .item:nth-child(7) .line::before, .item:nth-child(7) .line::after{
+    animation-delay: 0.7s;
+}
+.item:nth-child(8) .line, .item:nth-child(8) .line::before, .item:nth-child(8) .line::after{
+    animation-delay: 0.8s;
+}
+.item:nth-child(9) .line, .item:nth-child(9) .line::before, .item:nth-child(9) .line::after{
+    animation-delay: 0.9s;
+}
+.item:nth-child(10) .line, .item:nth-child(10) .line::before, .item:nth-child(10) .line::after{
+    animation-delay: 1s;
+}
