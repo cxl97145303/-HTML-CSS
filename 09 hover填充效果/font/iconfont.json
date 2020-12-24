@@ -1,0 +1,30 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4552092",
+      "name": "点赞",
+      "font_class": "dianzan",
+      "unicode": "e503",
+      "unicode_decimal": 58627
+    },
+    {
+      "icon_id": "8714209",
+      "name": "投币",
+      "font_class": "toubi",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "15859052",
+      "name": "收 藏 (1)",
+      "font_class": "shoucang11",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    }
+  ]
+}
