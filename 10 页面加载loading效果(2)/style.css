@@ -1,0 +1,159 @@
+:root{
+    --background-color: #324252;
+    --container-color: #43525f;
+    --loader-color: #aaa;
+    --rotate-color: red;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+}
+.container {
+    width: 100px;
+    height: 100px;
+    background-color: var(--container-color);
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 第一个加载样式 */
+.loader1 {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--loader-color);
+    border-radius: 50%;
+    border-bottom-color: var(--rotate-color);
+    animation: rotate 1s linear infinite;
+}
+
+
+/* 第二个加载样式 */
+.loader2 {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--loader-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader2::before{
+    position: absolute;
+    content: "";
+    width: 60px;
+    height: 60px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    border-bottom-color: var(--rotate-color);
+    animation: rotate 1s linear infinite;
+}
+
+
+/* 第三个加载样式 */
+.loader3 {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--loader-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader3::before{
+    position: absolute;
+    content: "";
+    width: 60px;
+    height: 60px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    border-bottom-color: var(--rotate-color);
+    animation: rotate 1s linear infinite;
+}
+.loader3::after{
+    position: absolute;
+    content: "";
+    width: 60px;
+    height: 60px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    border-top-color: var(--rotate-color);
+    animation: rotate 1s linear infinite;
+}
+
+
+/* 第四个加载样式 */
+.loader4 {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--loader-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader4::before{
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    border-bottom-color: var(--rotate-color);
+    animation: rotate 1s linear infinite;
+}
+
+
+/* 第五个加载样式 */
+.loader5 {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--loader-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader5::before{
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    border-bottom-color: var(--rotate-color);
+    animation: rotate 1s linear infinite;
+}
+.loader5::after{
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    border-top-color: var(--rotate-color);
+    animation: rotate 1s linear infinite;
+}
+/* 旋转动画 */
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
