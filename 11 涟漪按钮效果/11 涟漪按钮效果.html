@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11 涟漪按钮效果</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="btn">这是一个按钮</div>
+    <script>
+        // 获取元素对象
+        const btn = document.querySelector('.btn');
+        // 给获取的对象添加click事件
+        btn.addEventListener('click', e => {
+            // 获取点击目标对象左上角相较于页面左上角的坐标值，用于计算对象内的相对坐标
+            let offsetLeft = e.target.offsetLeft;
+            let offsetTop = e.target.offsetTop;
+            // 如果点击了新创建的span元素则获取其父对象的坐标值
+            if(e.target.nodeName == 'SPAN'){
+                offsetLeft = e.target.offsetParent.offsetLeft;
+                offsetTop = e.target.offsetParent.offsetTop;
+            }
+            // 通过获取点击位置相较于页面左上角的坐标减去目标对象距左上角的坐标计算出点击位置在对象内的相关坐标
+            let x = e.clientX - offsetLeft;
+            let y = e.clientY - offsetTop;
+            // 创建一个新的span表现
+            let newSpan = document.createElement('span');
+            // 将计算得出的相对坐标复制给span的位置
+            newSpan.style.left = x + "px";
+            newSpan.style.top = y + "px";
+            console.log(newSpan.style.left,newSpan.style.Top);
+            // 在对象中加入span标签，也就是涟漪效果
+            btn.appendChild(newSpan);
+            // 在涟漪效果结束后清除span标签，以防产生过多的span标签
+            setTimeout(()=>{
+                newSpan.remove();
+            },1000)
+        })
+    </script>
+</body>
+</html>
