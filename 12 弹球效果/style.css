@@ -1,0 +1,80 @@
+:root {
+    --background-color: #2c3e50;
+    --ball-color1: #ffae00;
+    --ball-color2: #473e09;
+    --shadow-color: #10171d;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 14px;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: #fff;
+}
+.ball {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    top: 10px;
+    /* 保证小球水平居中 */
+    left: 50%;
+    transform: translate(-50%);
+    /* 背景颜色以坐标(50px,50px)为中心向外散发，制作出阴影效果 */
+    background: radial-gradient(circle at 50px 50px,var(--ball-color1),var(--ball-color2));
+    animation: ball_move 1s ease-in-out infinite;
+    z-index: 10;
+}
+/* 小球上下弹动的时候发生微小的形变 */
+@keyframes ball_move{
+    0%,100%{
+        top: 10px;
+        width: 130px;
+        height: 130px;
+    }
+    50%{
+        top: 130px;
+        width: 140px;
+        height: 120px;
+    }
+}
+
+.shadow {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: 250px;
+    left: 50%;
+    transform: translate(-50%,-50%) rotateX(70deg);
+    background-color: var(--shadow-color);
+    animation: shadow_change 1s ease-in-out infinite;
+    z-index: 5;
+}
+/* 阴影大小及深浅随小球的高度发生变化 */
+@keyframes shadow_change{
+    0%,100%{
+        width: 80px;
+        height: 80px;
+        opacity: 0.5;
+    }
+    50%{
+        width: 100px;
+        height: 100px;
+        opacity: 0.8;
+    }
+}
