@@ -1,0 +1,128 @@
+:root {
+    --background-color: #2c3e50;
+    --border-color: #7591ad;
+    --text-color: #34495e;
+    --shadow-color: #34495e30;
+    --color1: #ec3e27;
+    --color2: #fd79a8;
+    --color3: #0984e3;
+    --color4: #00b894;
+    --color5: #fdcb6e;
+    --color6: #e056fd;
+    --color7: #f97f51;
+    --color8: #bdc581;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 14px;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #eee;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.goods {
+    position: absolute;
+    width: 350px;
+    height: 280px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 5px 5px 20px var(--shadow-color);
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.goods:nth-child(1){
+    transform: rotateY(20deg) rotateX(30deg) translate(-100px, 45px);
+}
+.goods:nth-child(2){
+    transform: rotateY(20deg) rotateX(30deg) translate(0, 0);
+}
+.goods:nth-child(3){
+    transform: rotateY(20deg) rotateX(30deg) translate(100px, 70px);
+}
+
+.goods:hover:nth-child(1){
+    transform: rotateY(20deg) rotateX(30deg) translate(-100px, 45px) translateZ(30px);
+}
+.goods:hover:nth-child(2){
+    transform: rotateY(20deg) rotateX(30deg) translate(0, 0) translateZ(30px);
+}
+.goods:hover:nth-child(3){
+    transform: rotateY(20deg) rotateX(30deg) translate(100px, 70px) translateZ(30px);
+}
+
+.pic {
+    width: 350px;
+    height: 200px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: violet;
+    transform: rotateZ(8deg) translate(-10px, -45px);
+}
+
+.description {
+    margin: 0 30px;
+    margin-top: -15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.description .name {
+    font-size: 1.6rem;
+    margin-top: -1rem;
+    font-weight: bold;
+    color: #555;
+}
+
+.description .texture {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #999;
+}
+
+.description .cost {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--color2);
+}
+
+.description .star {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.description .star span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #999;
+    margin: 2px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.description .star span.light {
+    background-color: var(--color2);
+}
